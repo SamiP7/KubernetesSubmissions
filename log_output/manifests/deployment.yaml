@@ -14,4 +14,7 @@ spec:
     spec:
       containers:
         - name: randomlog
-          image: samip7/randomlog
+          image: randomlog
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5000

@@ -1,10 +1,22 @@
 import random
 import string
-import time
 import datetime
+from flask import Flask
+import threading
 
 rand = ''.join(random.choices(string.ascii_letters + string.digits, k=10))
 
-while True:
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return f'datetime: {datetime.datetime.now()}, string: {rand}'
+
+def thread():
+	threading.Timer(5, thread).start()
 	print(f'{datetime.datetime.now()}: {rand}', flush=True)
-	time.sleep(5)
+ 
+thread()
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0')
