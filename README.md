@@ -11,3 +11,4 @@
 - [1.5](https://github.com/SamiP7/KubernetesSubmissions/tree/main/project)
 - [1.6](https://github.com/SamiP7/KubernetesSubmissions/tree/main/project)
 - [1.7](https://github.com/SamiP7/KubernetesSubmissions/tree/main/log_output)
+- [1.8](https://github.com/SamiP7/KubernetesSubmissions/tree/main/project)
