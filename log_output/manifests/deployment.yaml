@@ -12,9 +12,22 @@ spec:
       labels:
         app: randomlog
     spec:
+      volumes:
+        - name: shared-log
+          emptyDir: {}
       containers:
-        - name: randomlog
-          image: randomlog
+        - name: logwriter
+          image: stringgenerator
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+          - name: shared-log
+            mountPath: /usr/src/app/files
+        - name: logreader
+          image: stringreader
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5000
+          volumeMounts:
+          - name: shared-log
+            mountPath: /usr/src/app/files
+        
