@@ -5,9 +5,15 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    path = '/usr/src/app/files/output.txt'
-    with open(path) as f:
-        return f.read()
+    pathstr = '/usr/src/app/files/output.txt'
+    pathpong = '/usr/src/app/files/pong.txt'
+    with open(pathstr) as f:
+        lines = f.read().splitlines()
+        randomstr = lines[-1]
+    
+    with open(pathpong) as f:
+        pongstr = f.read()
+    return f'{randomstr} \n {pongstr}'
 
 if __name__ == "__main__":
     time.sleep(3)

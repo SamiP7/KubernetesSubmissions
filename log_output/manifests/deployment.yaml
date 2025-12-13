@@ -14,7 +14,8 @@ spec:
     spec:
       volumes:
         - name: shared-log
-          emptyDir: {}
+          persistentVolumeClaim:
+            claimName: log-vol-claim
       containers:
         - name: logwriter
           image: stringgenerator
