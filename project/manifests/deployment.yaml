@@ -12,7 +12,14 @@ spec:
       labels:
         app: todo
     spec:
+      volumes:
+        - name: project-image
+          persistentVolumeClaim:
+            claimName: project-claim
       containers:
         - name: todo
           image: todo
           imagePullPolicy: IfNotPresent
+          volumeMounts:
+          - name: project-image
+            mountPath: /usr/src/app/files
