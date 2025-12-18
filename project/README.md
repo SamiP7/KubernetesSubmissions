@@ -11,3 +11,5 @@ Can be accessed on browser by port forwarding: kubectl port-forward *podname any
 Services switched to ingress, just apply all services by: kubectl apply -f manifests, and app is found at localhost:8081
 
 Images added to front page that are persistently stored. Refresh every 10 minutes even if server crashes (stores the time when image was queried and compares it to current time, does this check every 30 seconds or when server is started and if more than 10 minutes has passed, it downloads and displays a new picture)
+
+Contains some hardcoded todos and new ones are not yet added (max length 140 chars)
