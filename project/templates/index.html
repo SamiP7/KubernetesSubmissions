@@ -11,7 +11,18 @@
 </header>
 
 <main>
-    <img src="/usr/src/app/files/image.jpg" width="200" height="200"> 
+    <img src="/usr/src/app/files/image.jpg" width="200" height="200">
+    <li>
+        <input type="text" name="todoCreator" maxlength="140" required>
+        <button type="submit">Create todo</button>
+    </li>
+    
+    <ul>
+        <% for(var i = 0 ; i < todos.length ; i++) { %>
+            <li><%= todos[i] %></li>
+        <%}%>
+    </ul>
+
 </main>
 <footer>
     <p>DevOps with Kubernetes 2025</p>

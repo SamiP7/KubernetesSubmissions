@@ -56,8 +56,11 @@ setInterval(() => {
 
 app.use(express.static('../'))
 
+app.engine('html', require('ejs').renderFile);
+
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/templates/index.html');
+    var todos = ['Learn JavaScript', 'Learn React', 'Build a project'];
+    res.render(__dirname + '/templates/index.html', {todos:todos});
 
 })
 
